@@ -23,13 +23,13 @@ export class NavComponent {
     private breakpointObserver: BreakpointObserver,
     private auth: AuthService,
     private router: Router
-  ) {}
+  ) { }
 
   logout() {
     this.auth.logout()
-    .then(() => {
-      this.router.navigate(['./home']);
-    });
+      .then(() => {
+        this.router.navigate(['./auth/login']);
+      });
   }
 
 }
