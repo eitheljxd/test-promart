@@ -3,7 +3,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "platzi-store": {
+    "ecommerce": {
       "projectType": "application",
       "schematics": {
         "@schematics/angular:component": {
@@ -17,7 +17,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "outputPath": "dist/platzi-store",
+            "outputPath": "dist/ecommerce",
             "index": "src/index.html",
             "main": "src/main.ts",
             "polyfills": "src/polyfills.ts",
@@ -97,21 +97,21 @@
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
           "options": {
-            "browserTarget": "platzi-store:build"
+            "browserTarget": "ecommerce:build"
           },
           "configurations": {
             "production": {
-              "browserTarget": "platzi-store:build:production"
+              "browserTarget": "ecommerce:build:production"
             },
             "stag": {
-              "browserTarget": "platzi-store:build:stag"
+              "browserTarget": "ecommerce:build:stag"
             }
           }
         },
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "platzi-store:build"
+            "browserTarget": "ecommerce:build"
           }
         },
         "test": {
@@ -149,18 +149,18 @@
           "builder": "@angular-devkit/build-angular:protractor",
           "options": {
             "protractorConfig": "e2e/protractor.conf.js",
-            "devServerTarget": "platzi-store:serve"
+            "devServerTarget": "ecommerce:serve"
           },
           "configurations": {
             "production": {
-              "devServerTarget": "platzi-store:serve:production"
+              "devServerTarget": "ecommerce:serve:production"
             }
           }
         }
       }
     }
   },
-  "defaultProject": "platzi-store",
+  "defaultProject": "ecommerce",
   "cli": {
     "analytics": "a1b43abb-96c0-45f0-b938-f192ec621d4f"
   }
