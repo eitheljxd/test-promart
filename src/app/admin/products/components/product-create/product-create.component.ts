@@ -9,6 +9,7 @@ import { MyValidators } from './../../../../utils/validators';
 import { ProductsService } from './../../../../core/services/products/products.service';
 
 import { Observable } from 'rxjs';
+import * as moment from 'moment';
 
 @Component({
   selector: 'app-product-create',
@@ -35,7 +36,10 @@ export class ProductCreateComponent implements OnInit {
   saveProduct(event: Event) {
     event.preventDefault();
     if (this.form.valid) {
+      this.form.value.fecha_nacimiento =  moment(this.form.value.fecha_nacimiento,'YYYY-MM-DD').format('DD/MM/YYYY');
       const product = this.form.value;
+
+      console.log(product);
       this.productsService.createProduct(product)
         .subscribe((newProduct) => {
           console.log(newProduct);
@@ -68,7 +72,7 @@ export class ProductCreateComponent implements OnInit {
       nombres: ['', [Validators.required]],
       apellidos: ['', [Validators.required]],
       edad: ['', [Validators.required, MyValidators.isPriceValid]],
-      fecha: ['', [Validators.required]],
+      fecha_nacimiento: ['', [Validators.required]],
     });
   }
 

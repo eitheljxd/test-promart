@@ -32,6 +32,6 @@ export class ProductsService {
   }
 
   deleteProduct(id: string) {
-    return this.http.delete(`${environment.url_api}/usuarios/${id}`);
+    return this.http.delete(`${environment.url_api}/usuarios.json/${id}`);
   }
 }

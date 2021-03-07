@@ -6,6 +6,7 @@ import { AdminRoutingModule } from './admin-routing.module';
 
 import { MaterialModule } from './../material/material.module';
 import { NavComponent } from './components/nav/nav.component';
+import { ChartsModule } from 'ng2-charts';
 
 
 @NgModule({
@@ -13,6 +14,7 @@ import { NavComponent } from './components/nav/nav.component';
   imports: [
     CommonModule,
     AdminRoutingModule,
+    ChartsModule,
     ReactiveFormsModule,
     MaterialModule,
   ]

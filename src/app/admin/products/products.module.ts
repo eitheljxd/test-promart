@@ -8,6 +8,7 @@ import { ProductsRoutingModule } from './products-routing.module';
 import { ProductsComponent } from './components/products/products.component';
 import { ProductCreateComponent } from './components/product-create/product-create.component';
 import { ProductEditComponent } from './components/product-edit/product-edit.component';
+import { ChartsModule } from 'ng2-charts';
 
 
 
@@ -19,6 +20,7 @@ import { ProductEditComponent } from './components/product-edit/product-edit.com
   ],
   imports: [
     CommonModule,
+    ChartsModule,
     ReactiveFormsModule,
     MaterialModule,
     ProductsRoutingModule
