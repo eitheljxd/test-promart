@@ -1,16 +1,16 @@
 <form [formGroup]="form" (ngSubmit)="saveProduct($event)">
-    <mat-card>
-      <mat-card-header>
-       
-        <mat-card-title>Cliente</mat-card-title>
-      </mat-card-header>
-      <mat-card-content>
-        <div class="row">
-          <div class="col-6">
+  <mat-card style="padding: 20px;">
+    <mat-card-header>
+
+      <mat-card-title>Cliente</mat-card-title>
+    </mat-card-header>
+    <mat-card-content>
+      <div class="row">
+        <div class="col-6">
           <div class="row">
             <div class="col-xs">
               <mat-form-field>
-                <input  readonly placeholder="Nombres" formControlName="nombres" matInput type="text">
+                <input readonly placeholder="Nombres" formControlName="nombres" matInput type="text">
               </mat-form-field>
             </div>
           </div>
@@ -26,7 +26,7 @@
               <mat-form-field>
                 <input readonly placeholder="Edad" formControlName="edad" matInput type="number">
               </mat-form-field>
-              
+
             </div>
           </div>
           <div class="row">
@@ -38,81 +38,78 @@
           </div>
         </div>
 
-        <div class="col-3" style="width: 40%;" >
+        <div class="col-3" style="width: 40%;">
           <div class="timeline">
             <div class="timeline__header">
               <span>Estimado fecha de defunción:</span>
               <h1>{{fechaDef}}</h1>
-         
-              <div class="process" >
-               <div class="xd"   [ngStyle]="{'width': widthAl + '%'}"></div>
-             </div>
-         
+
+              <div class="process">
+                <div class="xd" [ngStyle]="{'width': widthAl + '%'}"></div>
+              </div>
+
             </div>
-         
+
             <div class="line">
               <div class="line-content">
-         
+
                 <div class="content">
                   <h1>Fecha Nacimiento</h1>
                   <p>{{form.value.fecha_nacimiento}}</p>
                 </div>
-         
+
                 <div class="content">
-                 <h1>Hoy </h1>
-                 <p>{{fechaActual}} - Faltan {{restante}} </p>
-               </div>
-               
-               <div class="content">
-                 <h1>Fecha Aproximada</h1>
-                 <p>{{fechaDef}}</p>
-               </div>
-                
+                  <h1>Hoy </h1>
+                  <p>{{fechaActual}} - Faltan {{restante}} </p>
+                </div>
+
+                <div class="content">
+                  <h1>Fecha Aproximada</h1>
+                  <p>{{fechaDef}}</p>
+                </div>
+
               </div>
             </div>
           </div>
-         
-        
+
+
         </div>
-       
-        <div class="col-3" style="width: 30%;" >
+
+        <div class="col-3" style="width: 30%;">
           <div class="timeline">
             <div class="timeline__header_hgrap">
               <span>Gráfico de edad según media de clientes</span>
               <h1>Edad - Media Clientes</h1>
             </div>
-            
+
           </div>
-          
-          <div >
-                <canvas baseChart
-                  [datasets]="barChartData"
-                  [labels]="barChartLabels"
-                  [options]="barChartOptions"
-                  [plugins]="barChartPlugins"
-                  [legend]="barChartLegend"
-                  [chartType]= "barChartType">
-                </canvas>
+
+          <div>
+            <canvas baseChart [datasets]="barChartData" [labels]="barChartLabels" [options]="barChartOptions"
+              [plugins]="barChartPlugins" [legend]="barChartLegend" [chartType]="barChartType">
+            </canvas>
           </div>
-        
+
         </div>
 
 
-      
-      
 
-        </div>
-    
-     
 
-      </mat-card-content>
+
+      </div>
+
+
+
+    </mat-card-content>
+    <mat-card-actions>
       <button mat-raised-button color="warn" routerLink="/admin/clientes">Volver</button>
 
-    </mat-card>
+    </mat-card-actions>
 
-   
-  
+  </mat-card>
 
-    
-  </form>
-  
+
+
+
+
+</form>
