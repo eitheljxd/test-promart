@@ -6,9 +6,9 @@ export const environment = {
   production: false,
   url_api: 'https://test-tec-e993e-default-rtdb.firebaseio.com',
   firebase: {
-    databaseURL: "https://test-tec-e993e-default-rtdb.firebaseio.com/",
     apiKey: "AIzaSyAoUBjtUdp12qEXB3jQWGov_gEZn9q2cG8",
     authDomain: "test-tec-e993e.firebaseapp.com",
+    databaseURL: "https://test-tec-e993e-default-rtdb.firebaseio.com",
     projectId: "test-tec-e993e",
     storageBucket: "test-tec-e993e.appspot.com",
     messagingSenderId: "537240297935",

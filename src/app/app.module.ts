@@ -5,6 +5,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { AngularFireModule } from '@angular/fire';
 import { AngularFireAuthModule } from '@angular/fire/auth';
 import { AngularFireStorageModule } from '@angular/fire/storage';
+import { MatDialogModule } from '@angular/material/dialog';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -18,6 +19,8 @@ import { environment } from './../environments/environment';
 import { LocationStrategy, HashLocationStrategy } from '@angular/common';
 import { ChartsModule } from 'ng2-charts';
 
+import { DashboardService } from './services/dashboard.service'
+import { MatTableModule } from '@angular/material/table';
 @NgModule({
   declarations: [
     AppComponent,
@@ -34,10 +37,13 @@ import { ChartsModule } from 'ng2-charts';
     HttpClientModule,
     AngularFireModule.initializeApp(environment.firebase),
     AngularFireAuthModule,
-    AngularFireStorageModule
+    AngularFireStorageModule,
+    MatTableModule,
+    MatDialogModule
   ],
   providers: [
-    { provide: LocationStrategy, useClass: HashLocationStrategy }
+    { provide: LocationStrategy, useClass: HashLocationStrategy },
+    DashboardService
   ],
   bootstrap: [AppComponent]
 })

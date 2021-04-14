@@ -1,33 +1,48 @@
 import { Component } from '@angular/core';
 import { map } from 'rxjs/operators';
 import { Breakpoints, BreakpointObserver } from '@angular/cdk/layout';
-
+import { DashboardService } from 'src/app/services/dashboard.service';
+import { Bucket } from 'src/app/core/models/bucket.model';
+import * as moment from 'moment';
 @Component({
   selector: 'app-dashboard',
   templateUrl: './dashboard.component.html',
   styleUrls: ['./dashboard.component.scss']
 })
 export class DashboardComponent {
+
+  displayedColumns: string[] = ['size', 'date', 'url'];
+
+
   /** Based on the screen size, switch from standard to one column per row */
-  cards = this.breakpointObserver.observe(Breakpoints.Handset).pipe(
-    map(({ matches }) => {
-      if (matches) {
-        return [
-          { title: 'Card 1', cols: 1, rows: 1 },
-          { title: 'Card 2', cols: 1, rows: 1 },
-          { title: 'Card 3', cols: 1, rows: 1 },
-          { title: 'Card 4', cols: 1, rows: 1 }
-        ];
-      }
+  lastBucket: Bucket;
+  listBucket: Bucket[];
 
-      return [
-        { title: 'Card 1', cols: 2, rows: 1 },
-        { title: 'Card 2', cols: 1, rows: 1 },
-        { title: 'Card 3', cols: 1, rows: 2 },
-        { title: 'Card 4', cols: 1, rows: 1 }
-      ];
-    })
-  );
+  loading: boolean = true;
+  constructor(private breakpointObserver: BreakpointObserver,
+    private dashboardService: DashboardService) {
 
-  constructor(private breakpointObserver: BreakpointObserver) {}
+  }
+  ngOnInit(): void {
+    this.getLastInsert();
+    this.getHistory();
+
+
+    this.loading = false;
+  }
+  getLastInsert() {
+    this.dashboardService.getLastInsert()
+      .subscribe((bucket: Bucket) => {
+        this.lastBucket = bucket;
+      })
+  }
+  getHistory() {
+    this.dashboardService.getHistory()
+      .subscribe((bucket: Bucket[]) => {
+        this.listBucket = bucket;
+      })
+  }
+  getFormat(date) {
+    return moment(date).format('l') + " " + moment(date).format('LT');
+  }
 }

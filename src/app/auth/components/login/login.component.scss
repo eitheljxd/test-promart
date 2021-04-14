@@ -1,13 +1,13 @@
-@import '~@angular/material/theming';
+@import "~@angular/material/theming";
 
 $primary: mat-palette($mat-indigo);
 
 :host {
   height: 100vh;
-  background-color: #3f51b5;
+  background-color: white;
   display: block;
 }
-  // --background: linear-gradient(90deg, #1c3643, #273b47 25%, #1e5372);
+// --background: linear-gradient(90deg, #1c3643, #273b47 25%, #1e5372);
 form {
   width: 90%;
   margin: 0px auto;
@@ -23,7 +23,7 @@ form {
 }
 /* Medium only */
 @media screen and (min-width: 40em) and (max-width: 63.9375em) {
-  form{
+  form {
     position: absolute;
     top: 20%;
     left: 50%;

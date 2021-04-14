@@ -6,9 +6,9 @@
       <a mat-list-item routerLink="/admin">
         <mat-icon>bubble_chart</mat-icon> Dashboard
       </a>
-      <a mat-list-item routerLink="/admin/clientes">
+      <!-- <a mat-list-item routerLink="/admin/clientes">
         <mat-icon>store</mat-icon> Clientes
-      </a>
+      </a> -->
       <!-- <a mat-list-item routerLink="/admin/categories">
         <mat-icon>category</mat-icon> Categoría</a> -->
       <button mat-list-item (click)="logout()">
@@ -17,12 +17,12 @@
     </mat-nav-list>
   </mat-sidenav>
   <mat-sidenav-content>
-    <mat-toolbar color="primary">
+    <mat-toolbar style="background-color: #ff6e00;color:white">
       <button type="button" aria-label="Toggle sidenav" mat-icon-button (click)="drawer.toggle()"
         *ngIf="isHandset$ | async">
         <mat-icon aria-label="Side nav toggle icon">menu</mat-icon>
       </button>
-      <span>Ecommerce</span>
+      <span>Promart 2.0</span>
     </mat-toolbar>
     <!-- Add Content Here -->
     <router-outlet></router-outlet>
