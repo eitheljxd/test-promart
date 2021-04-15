@@ -21,6 +21,7 @@ import { ChartsModule } from 'ng2-charts';
 
 import { DashboardService } from './services/dashboard.service'
 import { MatTableModule } from '@angular/material/table';
+import { MatDatepickerModule } from '@angular/material/datepicker';
 @NgModule({
   declarations: [
     AppComponent,
@@ -37,9 +38,7 @@ import { MatTableModule } from '@angular/material/table';
     HttpClientModule,
     AngularFireModule.initializeApp(environment.firebase),
     AngularFireAuthModule,
-    AngularFireStorageModule,
-    MatTableModule,
-    MatDialogModule
+    AngularFireStorageModule
   ],
   providers: [
     { provide: LocationStrategy, useClass: HashLocationStrategy },

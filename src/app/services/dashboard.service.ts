@@ -15,10 +15,12 @@ export class DashboardService {
     constructor(private http: HttpClient) { }
 
 
-    getHistory() {
-
+    getHistory(search: string) {
+        const data = {
+            searchData: search
+        }
         const url = `${base_url}/getHistory`;
-        return this.http.get<any>(url);
+        return this.http.post<any>(url, data);
 
     }
 
