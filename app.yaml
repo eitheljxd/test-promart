@@ -1,0 +1,21 @@
+runtime: python27
+service: default-web
+api_version: 1
+threadsafe: true
+handlers:
+  - url: /
+    static_files: dist/ecommerce/index.html
+    upload: dist/ecommerce/index.html
+  - url: /
+    static_dir: dist/ecommerce
+
+skip_files:
+  - e2e/
+  - node_modules/
+  - src/
+  - coverage
+  - ^(.*/)?\..*$
+  - ^(.*/)?.*\.json$
+  - ^(.*/)?.*\.md$
+  - ^(.*/)?.*\.yaml$
+  - ^LICENSE
